@@ -1,0 +1,17 @@
+<form class="myTable" novalidate id="sign">
+    <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-phone"></span>
+            </span>
+        <input type="text" ng-model="user.tel" class="form-control" placeholder="请输入手机号码/用户名">
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+        </span>
+        <input type="password" ng-model="user.password" class="form-control" placeholder="请输入密码">
+    </div>
+    <button class="btn btn-primary" style="width:100%" ng-click="signIn()">登录</button>
+        <button class="btn btn-default" style="width:100%" ui-sref="forget">忘记密码？</button>
+</form>

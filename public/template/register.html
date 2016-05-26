@@ -1,0 +1,60 @@
+<div id="bg">
+    <form class="myTable" name="regForm" novalidate>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-phone"></span>
+            </span>
+            <input type="text" ng-model="user.tel" name="tel" class="form-control" placeholder="请输入手机号码" ng-minlength="11" ng-maxlength="11" ng-required="true">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input type="text" ng-model="user.username" name="username" class="form-control" placeholder="请输入用户名" ng-minlength="2" ng-maxlength="9" ng-required="true">
+        </div>
+
+        <div class="input-group">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+        </span>
+            <input type="password" ng-model="user.password" name="password" class="form-control" placeholder="请输入密码" ng-minlength="6" ng-maxlength="12" ng-required="true">
+        </div>
+
+        <div class="input-group">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+        </span>
+            <input type="password" ng-model="user.repassword" name="repassword" class="form-control" placeholder="请再次输入密码" ng-required="true">
+        </div>
+
+        <div class="input-group">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-star"></span>
+        </span>
+            <input type="password" ng-model="user.code" name="code" class="form-control" placeholder="请输入验证码" ng-required="true">
+            <button class="btn btn-default" ng-click="sendCode()" ng-disabled="user.go">{{user.send}}{{user.sec}}</button>
+        </div>
+        <button class="btn btn-primary" style="width:100%" ng-disabled="regForm.$invalid" ng-click="activate()">注册</button>
+        <div ng-show="regForm.tel.$dirty">
+            <div class="warn" ng-show="regForm.tel.$error.maxlength || regForm.tel.$error.minlength">
+                请输入11位手机号码
+            </div>
+        </div>
+        <div ng-show="regForm.username.$dirty">
+            <div class="warn" ng-show="regForm.username.$error.maxlength || regForm.username.$error.minlength">
+                请输入2~9位用户名
+            </div>
+        </div>
+        <div ng-show="regForm.password.$dirty">
+            <div class="warn" ng-show="regForm.password.$error.maxlength || regForm.password.$error.minlength">
+                请输入6~12位密码
+            </div>
+        </div>
+        <div ng-show="regForm.repassword.$dirty">
+            <div class="warn" ng-show="user.password!=user.repassword">
+                两次密码输入不一致
+            </div>
+        </div>
+    </form>
+</div>

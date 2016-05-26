@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>myweb</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="indexController">
+<div class="navbar navbar-default" style="margin: 0px">
+    <div id="myBar">
+        <button class="btn btn-default" ui-sref="home">主页</button>
+        <button class="btn btn-default" ui-sref="register" ng-if="hasReg">注册</button>
+        <button class="btn btn-default" ui-sref="signIn" ng-if="hasReg">登录</button>
+		<button class="btn btn-default" ng-click="logout()" ng-if="haslogout">注销</button>
+        <button class="btn btn-default" ui-sref="video">
+            <span class="glyphicon glyphicon-film"></span>精彩MV欣赏
+        </button>
+		 <button class="btn btn-default" ui-sref="file">图片分享</button>
+		<h3><span ng-bind="welcome"></span><span ng-bind="user.name"></span></h3>
+    </div>	
+</div>
+<div ui-view></div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/fileinput.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/fileinput_locale_zh.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="app/controller.js"></script>
+<script src="app/route.js"></script>
+</body>
+</html>

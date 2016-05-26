@@ -1,0 +1,44 @@
+angular.module('myApp',['ui.router','app.controller'])
+.config(function($stateProvider,$urlRouterProvider){
+    $stateProvider
+        .state('home',{
+            url:'/',
+            templateUrl:'template/home.html',
+            controller:'myController'
+        })
+        .state('video',{
+            url:'/video',
+            templateUrl:'template/video.html'
+        })
+        .state('register',{
+            url:'/register',
+            templateUrl:'template/register.html',
+            controller:'regController'
+        })
+        .state('signIn',{
+            url:'/signIn',
+            templateUrl:'template/signIn.html',
+            controller:'signInController'
+        })
+        .state('forget',{
+            url:'/forget',
+            templateUrl:'template/forget.html',
+            controller:'forgetController'
+        })
+        .state('loginSuccess',{
+            url:'/loginSuccess',
+            templateUrl:'template/loginSuccess.html',
+            controller:'loginSuccessController'
+        })
+		 .state('bomb',{
+            url:'/bomb',
+            templateUrl:'template/bomb.html',
+            controller:'bombController'
+        })
+		.state('file',{
+			url:'/file',
+			templateUrl:'template/file.html',
+			controller:'fileController'
+		})
+    $urlRouterProvider.otherwise('/');
+});

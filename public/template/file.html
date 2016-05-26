@@ -1,0 +1,24 @@
+﻿			<form enctype="multipart/form-data" method="POST" action="http://119.29.223.196:5000/file">
+                <input id="file-3" class="file" type="file" multiple data-min-file-count="1" name="photo">
+                <br>
+                <button type="submit" class="btn btn-primary">上传</button>
+                <button type="reset" class="btn btn-default">重置</button>
+            </form>
+			<div class="row">
+			  <div class="col-xs-6 col-md-3" ng-repeat="item in obj">
+				<a ng-href="{{item.photoPath}}" class="thumbnail">
+				  <img ng-src="{{item.photoPath}}">
+				</a>
+				<button class="btn btn-default" ng-click="delPhoto(item.photoPath)">删除</button>
+			  </div>
+			</div>
+			<script>
+			$("#file-3").fileinput({
+				showUpload: true,
+				showCaption: true,
+				browseClass: "btn btn-primary btn-lg",
+				//fileType: "any",
+				'allowedFileExtensions' : ['jpg', 'png','gif'],
+				previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+			});
+			</script>
